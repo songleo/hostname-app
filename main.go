@@ -33,7 +33,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	fmt.Fprintln(w, fmt.Sprintf("app version: %v", version))
-	fmt.Fprintln(w, fmt.Sprintf("\n"))
 	log.Println(fmt.Sprintf("method=%s url=%s protocol=%s status_code=%d",
 		r.Method,
 		r.URL,
