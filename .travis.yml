@@ -1,0 +1,22 @@
+os:
+  - linux
+
+language: go
+go:
+  - "1.17"
+
+services:
+  - docker
+
+env:
+  global:
+    - OS=linux
+
+jobs:
+  include:
+    - stage: build
+      name: "Build the image and push it"
+      script:
+        - docker build -f Dockerfile -t quay.io/${DOCKER_USER}/hostname:latest .
+        - docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
+        - docker push quay.io/${DOCKER_USER}/hostname:latest
