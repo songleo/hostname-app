@@ -1,6 +1,6 @@
 # hostname-app
 
-The hostname-app is a simple http server, will show the hostname and version:
+The hostname-app is a simple http server to show the hostname and version:
 
 ```
 $ export VERSION=v1.0 && go run main.go
