@@ -12,6 +12,6 @@ RUN microdnf update -y && microdnf clean all
 
 WORKDIR /tmp
 
-COPY --from=builder /tmp/main hostname
+COPY --from=builder /tmp/hostname hostname
 
 ENTRYPOINT ["/tmp/hostname"]
