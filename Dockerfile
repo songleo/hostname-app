@@ -14,6 +14,4 @@ WORKDIR /tmp
 
 COPY --from=builder /tmp/main hostname
 
-EXPOSE 3002
-
-ENTRYPOINT ["/hostname"]
+ENTRYPOINT ["/tmp/hostname"]
